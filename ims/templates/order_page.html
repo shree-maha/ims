@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Orders</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/order_page.css' %}">
+</head>
+<body>
+    <!-- Back Button on the left side -->
+    <a href="{% url 'shopping_page' %}" class="back-button">Back to Shopping</a>
+
+    <h1>ORDERS</h1>
+    <p>Below are the orders you have placed:</p>
+    <h3>Grand Total: ${{ grand_total }}</h3>
+
+    <!-- Display orders -->
+    <ul class="orders-list">
+        {% for order in orders %}
+            <li class="order-item">
+                <div class="product-image">
+                    {% if order.product.image %}
+                        <img src="{{ order.product.image.url }}" alt="{{ order.product.name }}">
+                    {% else %}
+                        <p>No Image Available</p>
+                    {% endif %}
+                </div>
+                <div class="order-details">
+                    <p><strong>Product:</strong> {{ order.product.name }}</p>
+                    <p><strong>Quantity:</strong> {{ order.quantity }}</p>
+                    <p><strong>Status:</strong> 
+                        {% if order.status == "Placed" %}
+                            <span class="order-status placed">✔ Order Placed</span>
+                        {% else %}
+                            {{ order.status }}
+                        {% endif %}
+                    </p>
+                    <p><strong>Placed at:</strong> {{ order.placed_at }}</p>
+                    <p><strong>Total Price:</strong> ${{ order.total_price }}</p> <!-- Display total price for each order -->
+                </div>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

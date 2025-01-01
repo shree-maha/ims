@@ -1,0 +1,115 @@
+body {
+    font-family: Arial, sans-serif;
+    background: url('/static/image/pic1.png') no-repeat center center fixed;
+    background-size: cover;
+    margin: 0;
+}
+
+.header {
+    background-color: #ffffff;
+    color: black;
+    padding: 20px;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+}
+
+.dailyMate-text {
+    font-family: 'Georgia', serif; /* Change font style for DailyMate */
+    font-size: 36px; /* Change the size of DailyMate text */
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+.secondary-header {
+    background-color: orangered;
+    color: black;
+    padding: 15px;
+    text-align: center;  /* Ensures the text is centered horizontally */
+    width: 100%;
+    margin-top: 60px; /* Adjust margin to avoid overlap with the first header */
+    font-family: 'Arial', sans-serif; /* Font style change */
+    font-size: 18px; /* Adjust font size */
+    box-sizing: border-box; /* Ensures padding doesn't affect the width */
+}
+
+h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: rgb(0, 0, 0);
+}
+
+.login-container {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgb(0, 0, 0);
+    width: 300px;
+    text-align: center;
+    position: absolute;
+    top: 60%;
+    left: 10%; /* Move the login box to the left */
+    transform: translateY(-50%);
+}
+
+.error-messages {
+    color: red;
+    margin-bottom: 15px;
+}
+
+table {
+    width: 100%;
+}
+
+table td {
+    padding: 10px;
+}
+
+input {
+    padding: 8px;
+    background-color: white;
+    color: #000000;
+    border: 2px solid #000000; /* Add a curved border */
+    border-radius: 12px; /* Add curvature to the border */
+    font-size: 14px;
+    width: 100%;
+}
+
+.toggle-password {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    color: black;
+    border: 2px solid #000000; /* Add a curved border */
+    border-radius: 12px; /* Add curvature to the border */
+}
+
+button {
+    padding: 10px;
+    background-color: white;
+    color: #000000;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%;
+    border: 2px solid #000000; /* Add a curved border */
+    border-radius: 12px; /* Add curvature to the border */
+    transition: all 0.3s ease; /* Add transition for smooth animation */
+}
+
+button:hover {
+    background-color: orangered;
+    color: #000000;
+    transform: scale(1.05); /* Add scale effect on hover */
+    border: none; /* Remove the border on hover */
+}
+
+button:active {
+    transition: background-color 0.3s ease;
+}
