@@ -1,0 +1,68 @@
+<html lang="en">
+    {% load static %}
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Login - Admin/Customer</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}">
+    </head>
+    
+    <body>
+        <div class="header">
+            <h1>DailyMate</h1>
+        </div>
+        
+        <!-- New yellow header -->
+        <div class="secondary-header">
+            <h2> </h2>
+        </div>
+        
+        <div class="login-container">
+            <h2>LOGIN</h2>
+            {% if messages %}
+                <div class="error-messages">
+                    {% for message in messages %}
+                        <p>{{ message }}</p>
+                    {% endfor %}
+                </div>
+            {% endif %}
+            <form method="POST" action="">
+                {% csrf_token %}
+                <table>
+                    <tr>
+                        <td colspan="2">
+                            <input type="text" name="username" placeholder="Enter Email" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="password" name="password" placeholder="Enter Password" id="password" required>
+                        </td>
+                        <td>
+                            <button type="button" class="toggle-password" onclick="togglePassword()">Show</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <button type="submit">Login</button>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+        
+        <script>
+            function togglePassword() {
+                const passwordField = document.getElementById('password');
+                const toggleButton = document.querySelector('.toggle-password');
+                if (passwordField.type === 'password') {
+                    passwordField.type = 'text';
+                    toggleButton.textContent = 'Hide';
+                } else {
+                    passwordField.type = 'password';
+                    toggleButton.textContent = 'Show';
+                }
+            }
+        </script>
+    </body>
+</html>

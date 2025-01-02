@@ -1,0 +1,57 @@
+/* app_name/static/css/customer_order_details.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    padding: 0;
+    background-color: #f8f9fa;
+}
+
+h1 {
+    color: orangered;
+    text-align: center;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background-color: orangered;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+button {
+    margin: 10px 5px;
+    padding: 10px 15px;
+    background-color: white;
+    color: black;
+    border: 2px solid black;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: orangered;
+    border: none;
+    color: white;
+    transition: all 0.3s ease, transform 0.2s ease;
+
+}
+
+a {
+    text-decoration: none;
+}

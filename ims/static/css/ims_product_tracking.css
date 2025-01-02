@@ -1,0 +1,112 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #f9f9f9;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 10%;
+}
+
+.back-button button,
+.add-product-button button {
+    font-size: 16px;
+    font-weight: bold;
+    background-color: orangered;
+    border: 2px solid orangered;
+    border-radius: 10px;
+    padding: 10px 15px;
+    cursor: pointer;
+    color: white;
+    transition: all 0.3s ease, transform 0.2s ease;
+}
+
+.back-button button:hover,
+.add-product-button button:hover {
+    background-color: darkred;
+    transform: scale(1.1);
+}
+
+table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background-color: #fff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background-color: orangered;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tr:hover {
+    background-color: #ddd;
+}
+
+img {
+    border-radius: 5px;
+    display: block;
+    margin: 0 auto;
+}
+
+.low-stock {
+    background-color: #ffcccc; /* Light red to indicate low stock */
+}
+
+.low-stock-warning {
+    color: red;
+    font-weight: bold;
+    margin-left: 10px;
+}
+/* Update and Delete Button Styles */
+table button {
+    padding: 8px 12px;
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Update Button */
+table button:first-child {
+    background-color: #4CAF50; /* Green */
+    color: white;
+}
+
+table button:first-child:hover {
+    background-color: #45a049; /* Darker green */
+    transform: scale(1.1);
+}
+
+/* Delete Button */
+table button:last-child {
+    background-color: #f44336; /* Red */
+    color: white;
+    margin-left: 5px;
+}
+
+table button:last-child:hover {
+    background-color: #d32f2f; /* Darker red */
+    transform: scale(1.1);
+}

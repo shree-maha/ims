@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Order Details</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/customer_order_details.css' %}">
+</head>
+<body>
+    <h1>Customer Order Details</h1>
+    <p>Here are the orders placed by customers:</p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Customer Email</th>
+                <th>Product Name</th>
+                <th>Quantity</th>
+                <th>Total Price</th>
+                <th>Placed At</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for order in orders %}
+                <tr>
+                    <td>{{ order.customer.username }}</td>
+                    <td>{{ order.product.name }}</td>
+                    <td>{{ order.quantity }}</td>
+                    <td>${{ order.total_price }}</td>
+                    <td>{{ order.placed_at }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <div>
+        <!-- Back to Admin Dashboard -->
+        <a href="{% url 'admin_dashboard' %}">
+            <button>Back to Admin Dashboard</button>
+        </a>
+        <!-- Back to Login -->
+        <a href="{% url 'login' %}">
+            <button>Back to Login</button>
+        </a>
+    </div>
+</body>
+</html>

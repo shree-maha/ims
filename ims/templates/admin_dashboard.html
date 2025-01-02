@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/admin_dashboard.css' %}">
+</head>
+<body>
+    <h1>Admin Dashboard</h1>
+    <p>Welcome, Admin! Here are the customer orders and IMS details:</p>
+
+    <div>
+        <a href="{% url 'customer_order_details' %}">
+            <button>Customer Order Details</button>
+        </a>
+        <a href="{% url 'ims_product_tracking' %}">
+            <button>IMS Product Tracking</button>
+        </a><br>
+        <!-- Back to Login Button -->
+        <a href="{% url 'login' %}">
+            <button>Back to Login</button>
+        </a>
+    </div>
+
+</body>
+</html>
