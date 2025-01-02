@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>IMS Product Tracking</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/ims_product_tracking.css' %}">
+</head>
+<body>
+    <br>
+    <h1>IMS Product Tracking</h1>
+    <div class="button-container">
+        <div class="back-button">
+            <button onclick="location.href='{% url 'admin_dashboard' %}'">Back to Admin Dashboard</button>
+        </div>
+        <div class="add-product-button">
+            <button onclick="location.href='{% url 'add_product' %}'">Add New Product</button>
+        </div>
+    </div>
+
+    <table>
+        <tr>
+            <th>Image</th>
+            <th>Product Name</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th>Stock Quantity</th>
+            <th>Actions</th>
+        </tr>
+        {% for product in products %}
+        <tr class="{% if product.stock_quantity < 10 %}low-stock{% endif %}">
+            <td>
+                {% if product.image %}
+                <img src="{{ product.image.url }}" alt="{{ product.name }}" width="80">
+                {% else %}
+                No Image
+                {% endif %}
+            </td>
+            <td>{{ product.name }}</td>
+            <td>{{ product.description }}</td>
+            <td>{{ product.price }}</td>
+            <td>
+                {{ product.stock_quantity }}
+                {% if product.stock_quantity < 10 %}
+                <span class="low-stock-warning">⚠️ Low Stock!</span>
+                {% endif %}
+            </td>
+            <td>
+                <button onclick="location.href='{% url 'update_product' product.id %}'">Update</button>
+                <button onclick="location.href='{% url 'delete_product' product.id %}'">Delete</button>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
